@@ -1,0 +1,17 @@
+# NUNCA versionar credenciais - segunda barreira caso o sincronizar.ps1 mude
+.credentials.json
+*.credentials*
+.env
+*.pem
+*.key
+
+# Banco do claude-mem fica de fora: guarda trechos de conversa que ja continham
+# uma chave de API em texto puro. Se quiser preservar a memoria, use pen drive.
+*.db
+*.db-wal
+*.db-shm
+.claude-mem/
+
+# Ruido
+*.log
+node_modules/

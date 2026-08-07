@@ -1,0 +1,54 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "includeCoAuthoredBy": false,
+  "model": "opus",
+  "enabledPlugins": {
+    "ponytail@ponytail": true,
+    "claude-mem@thedotmack": true,
+    "obsidian-second-brain@obsidian-second-brain": true,
+    "commit-pt@skills-claude": true,
+    "skill-bench@skills-claude": true,
+    "ecc@ecc": true,
+    "usage-for@skills-claude": true,
+    "curriculo-vaga@skills-claude": true
+  },
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
+    },
+    "obsidian-second-brain": {
+      "source": {
+        "source": "github",
+        "repo": "eugeniughelbur/obsidian-second-brain"
+      }
+    },
+    "skills-claude": {
+      "source": {
+        "source": "github",
+        "repo": "enzozon/skills_claude"
+      }
+    },
+    "ecc": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/affaan-m/ECC.git"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "autoUpdatesChannel": "latest",
+  "theme": "dark"
+}

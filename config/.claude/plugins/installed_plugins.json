@@ -1,0 +1,85 @@
+{
+  "version": 2,
+  "plugins": {
+    "ponytail@ponytail": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\Enzo\\.claude\\plugins\\cache\\ponytail\\ponytail\\4.8.4",
+        "version": "4.8.4",
+        "installedAt": "2026-07-13T21:06:46.761Z",
+        "lastUpdated": "2026-07-13T21:06:46.761Z",
+        "gitCommitSha": "14a0d79548d4de8fc2de95c1b94bb0de63a739d3"
+      }
+    ],
+    "claude-mem@thedotmack": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\Enzo\\.claude\\plugins\\cache\\thedotmack\\claude-mem\\13.11.0",
+        "version": "13.11.0",
+        "installedAt": "2026-07-13T21:06:48.613Z",
+        "lastUpdated": "2026-07-13T21:06:48.613Z",
+        "gitCommitSha": "f5633c1f84181673896c038cbe285131c6d669a3"
+      }
+    ],
+    "obsidian-second-brain@obsidian-second-brain": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\Enzo\\.claude\\plugins\\cache\\obsidian-second-brain\\obsidian-second-brain\\0.12.0",
+        "version": "0.12.0",
+        "installedAt": "2026-07-13T21:06:50.578Z",
+        "lastUpdated": "2026-07-13T21:06:50.578Z",
+        "gitCommitSha": "1808565ba5fa397060e800232cd9840d463a16bd"
+      }
+    ],
+    "commit-pt@skills-claude": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\Enzo\\.claude\\plugins\\cache\\skills-claude\\commit-pt\\0.1.0",
+        "version": "0.1.0",
+        "installedAt": "2026-07-13T21:33:56.647Z",
+        "lastUpdated": "2026-07-13T21:33:56.647Z",
+        "gitCommitSha": "6cfc87f9947d7ce12085f3972f274398a68ef493"
+      }
+    ],
+    "skill-bench@skills-claude": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\Enzo\\.claude\\plugins\\cache\\skills-claude\\skill-bench\\0.1.0",
+        "version": "0.1.0",
+        "installedAt": "2026-07-13T21:44:13.124Z",
+        "lastUpdated": "2026-07-13T21:44:13.124Z",
+        "gitCommitSha": "fbb78d11cee38aa8db750b6271c65d94e870f75a"
+      }
+    ],
+    "ecc@ecc": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\Enzo\\.claude\\plugins\\cache\\ecc\\ecc\\2.0.0",
+        "version": "2.0.0",
+        "installedAt": "2026-07-14T16:29:12.779Z",
+        "lastUpdated": "2026-07-14T16:29:12.779Z",
+        "gitCommitSha": "ed387446052dfbc6b52de149406b70efa65edc59"
+      }
+    ],
+    "usage-for@skills-claude": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\Enzo\\.claude\\plugins\\cache\\skills-claude\\usage-for\\0.2.0",
+        "version": "0.2.0",
+        "installedAt": "2026-07-18T13:51:33.680Z",
+        "lastUpdated": "2026-07-18T20:52:19.519Z",
+        "gitCommitSha": "c3672b04dd8bbbb5bb62139b1e81881b741118d4"
+      }
+    ],
+    "curriculo-vaga@skills-claude": [
+      {
+        "scope": "user",
+        "installPath": "C:\\Users\\Enzo\\.claude\\plugins\\cache\\skills-claude\\curriculo-vaga\\0.1.0",
+        "version": "0.1.0",
+        "installedAt": "2026-07-29T01:00:21.633Z",
+        "lastUpdated": "2026-07-29T01:00:21.633Z",
+        "gitCommitSha": "982fc2598a754cd2747be39b1a1754ae8b13162a"
+      }
+    ]
+  }
+}
