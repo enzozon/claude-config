@@ -22,15 +22,17 @@ Use o `.bat`, não o `.ps1` direto: num Windows recém-instalado a
 *"não pode ser carregado porque a execução de scripts foi desabilitada"*.
 O `.bat` contorna isso só naquele processo, sem alterar a segurança da máquina.
 
-**4. Abra o Claude Code:** rode `/login` e depois `/plugin` para reinstalar os
-plugins (o script lista quais eram).
+**4. Abra o Claude Code:** rode `/login`. Os plugins voltam sozinhos — o script
+corrige os caminhos e o Claude Code rebaixa o cache do marketplace. Confira com
+`claude plugin list`: os 8 devem aparecer como `enabled`. Só use `/plugin` se
+algum ficar como `failed to load` (o script imprime a lista do que era).
 
 ## O que tem aqui
 
 | Caminho | O quê |
 |---|---|
 | `config/.claude/rules/` | Suas regras globais (ecc: common, react, typescript, web) |
-| `config/.claude/skills/` | Skills aprendidas |
+| `config/.claude/skills/` | Skills próprias — hoje vazio: não havia `~/.claude/skills`. As skills em uso vêm dos plugins |
 | `config/.claude/settings.json` | Hooks, permissões, statusline |
 | `config/.claude/plugins/*.json` | Lista de plugins e marketplaces para reinstalar |
 | `config/.claude.json` | Config principal |
@@ -41,7 +43,7 @@ plugins (o script lista quais eram).
 |---|---|
 | `.credentials.json` | Token OAuth vivo da conta. `/login` recria em 10s |
 | `.claude-mem/*.db` | O banco de memória guardava uma chave de API do Google em texto puro, capturada de uma conversa antiga |
-| `plugins/cache/` | ~465 MB de código de plugin que se rebaixa sozinho do marketplace |
+| `plugins/cache/` | ~200 MB de código de plugin que se rebaixa sozinho do marketplace |
 | `projects/` | Histórico de conversas; dois arquivos passavam de 100 MB, que o GitHub rejeita |
 
 ## Atualizar antes de formatar

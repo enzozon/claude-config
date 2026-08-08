@@ -6,8 +6,19 @@ $src  = "$env:USERPROFILE"
 $repo = $PSScriptRoot
 
 Write-Host "Coletando configuracoes atuais ..." -ForegroundColor Cyan
-robocopy "$src\.claude\rules"  "$repo\config\.claude\rules"  /MIR /R:1 /W:1 /NFL /NDL /NJH /NJS /NP | Out-Null
-robocopy "$src\.claude\skills" "$repo\config\.claude\skills" /MIR /R:1 /W:1 /NFL /NDL /NJH /NJS /NP | Out-Null
+# Robocopy nao lanca excecao no PowerShell: com a origem faltando ele so devolve
+# codigo >= 8 e o script seguiria em silencio, gravando um backup incompleto.
+function Copiar-Pasta($origem, $destino) {
+    if (-not (Test-Path $origem)) {
+        Write-Host "  pulando $origem (nao existe nesta maquina)" -ForegroundColor Yellow
+        return
+    }
+    robocopy $origem $destino /MIR /R:1 /W:1 /NFL /NDL /NJH /NJS /NP | Out-Null
+    if ($LASTEXITCODE -ge 8) { throw "robocopy falhou ($LASTEXITCODE) em $origem" }
+}
+
+Copiar-Pasta "$src\.claude\rules"  "$repo\config\.claude\rules"
+Copiar-Pasta "$src\.claude\skills" "$repo\config\.claude\skills"
 
 Copy-Item "$src\.claude\settings.json"                   "$repo\config\.claude\"         -Force
 Copy-Item "$src\.claude\plugins\installed_plugins.json"  "$repo\config\.claude\plugins\" -Force

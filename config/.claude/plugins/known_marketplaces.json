@@ -4,47 +4,47 @@
       "source": "github",
       "repo": "anthropics/claude-plugins-official"
     },
-    "installLocation": "C:\\Users\\Enzo\\.claude\\plugins\\marketplaces\\claude-plugins-official",
-    "lastUpdated": "2026-08-07T21:43:52.422Z"
+    "installLocation": "C:\\Users\\enzoz\\.claude\\plugins\\marketplaces\\claude-plugins-official",
+    "lastUpdated": "2026-08-07T23:57:43.894Z"
   },
   "ponytail": {
     "source": {
       "source": "github",
       "repo": "DietrichGebert/ponytail"
     },
-    "installLocation": "C:\\Users\\Enzo\\.claude\\plugins\\marketplaces\\ponytail",
-    "lastUpdated": "2026-07-13T21:06:26.022Z"
+    "installLocation": "C:\\Users\\enzoz\\.claude\\plugins\\marketplaces\\ponytail",
+    "lastUpdated": "2026-08-07T23:59:22.173Z"
   },
   "thedotmack": {
     "source": {
       "source": "github",
       "repo": "thedotmack/claude-mem"
     },
-    "installLocation": "C:\\Users\\Enzo\\.claude\\plugins\\marketplaces\\thedotmack",
-    "lastUpdated": "2026-07-13T21:06:35.604Z"
+    "installLocation": "C:\\Users\\enzoz\\.claude\\plugins\\marketplaces\\thedotmack",
+    "lastUpdated": "2026-08-07T23:59:24.255Z"
   },
   "obsidian-second-brain": {
     "source": {
       "source": "github",
       "repo": "eugeniughelbur/obsidian-second-brain"
     },
-    "installLocation": "C:\\Users\\Enzo\\.claude\\plugins\\marketplaces\\obsidian-second-brain",
-    "lastUpdated": "2026-07-13T21:06:41.994Z"
+    "installLocation": "C:\\Users\\enzoz\\.claude\\plugins\\marketplaces\\obsidian-second-brain",
+    "lastUpdated": "2026-08-07T23:59:26.386Z"
   },
   "skills-claude": {
     "source": {
       "source": "github",
       "repo": "enzozon/skills_claude"
     },
-    "installLocation": "C:\\Users\\Enzo\\.claude\\plugins\\marketplaces\\skills-claude",
-    "lastUpdated": "2026-07-29T01:00:09.933Z"
+    "installLocation": "C:\\Users\\enzoz\\.claude\\plugins\\marketplaces\\skills-claude",
+    "lastUpdated": "2026-08-07T23:55:37.574Z"
   },
   "ecc": {
     "source": {
       "source": "git",
       "url": "https://github.com/affaan-m/ECC.git"
     },
-    "installLocation": "C:\\Users\\Enzo\\.claude\\plugins\\marketplaces\\ecc",
-    "lastUpdated": "2026-07-14T16:29:01.129Z"
+    "installLocation": "C:\\Users\\enzoz\\.claude\\plugins\\marketplaces\\ecc",
+    "lastUpdated": "2026-08-07T23:59:27.943Z"
   }
 }
