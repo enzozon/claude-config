@@ -34,10 +34,18 @@ if ($suspeitos) {
     exit 1
 }
 
-git -C $repo add -A
+# O git tambem nao lanca excecao no PowerShell: sem checar o $LASTEXITCODE o
+# script anunciava "Enviado para o GitHub" mesmo com o commit e o push falhando.
+function Rodar-Git {
+    param([string[]] $argumentos)
+    git -C $repo @argumentos
+    if ($LASTEXITCODE -ne 0) { throw "git $($argumentos -join ' ') falhou ($LASTEXITCODE)" }
+}
+
+Rodar-Git @('add', '-A')
 if (git -C $repo status --porcelain) {
-    git -C $repo commit -m "chore: atualiza configuracoes do Claude Code"
-    git -C $repo push
+    Rodar-Git @('commit', '-m', 'chore: atualiza configuracoes do Claude Code')
+    Rodar-Git @('push')
     Write-Host "`nEnviado para o GitHub." -ForegroundColor Green
 } else {
     Write-Host "`nNada mudou desde o ultimo sync." -ForegroundColor Green

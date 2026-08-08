@@ -12,17 +12,24 @@ e-mail em `oauthAccount`) dentro do `.claude.json`. Nenhuma credencial.
 irm https://claude.ai/install.ps1 | iex
 
 # 2. clonar este repo
+gh auth login
 gh repo clone enzozon/claude-config
+
+# 3. o formato leva o ~/.gitconfig junto: sem isso o sincronizar.ps1 nao commita
+#    ("Author identity unknown") nem envia ("could not read Username")
+git config --global user.name  "Enzo Faroni Zon"
+git config --global user.email "enzozon7b@gmail.com"
+gh auth setup-git
 ```
 
-**3. Duplo-clique em `RESTAURAR.bat`.**
+**4. Duplo-clique em `RESTAURAR.bat`.**
 
 Use o `.bat`, não o `.ps1` direto: num Windows recém-instalado a
 `ExecutionPolicy` vem `Restricted` e bloqueia o script com
 *"não pode ser carregado porque a execução de scripts foi desabilitada"*.
 O `.bat` contorna isso só naquele processo, sem alterar a segurança da máquina.
 
-**4. Abra o Claude Code:** rode `/login`. Os plugins voltam sozinhos — o script
+**5. Abra o Claude Code:** rode `/login`. Os plugins voltam sozinhos — o script
 corrige os caminhos e o Claude Code rebaixa o cache do marketplace. Confira com
 `claude plugin list`: os 8 devem aparecer como `enabled`. Só use `/plugin` se
 algum ficar como `failed to load` (o script imprime a lista do que era).

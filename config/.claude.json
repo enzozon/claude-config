@@ -1765,14 +1765,14 @@
   },
   "pluginUsage": {
     "ponytail@ponytail": {
-      "usageCount": 544,
-      "lastUsedAt": 1786138944061,
-      "lastUsedNumStartups": 91
+      "usageCount": 545,
+      "lastUsedAt": 1786147466883,
+      "lastUsedNumStartups": 93
     },
     "claude-mem@thedotmack": {
-      "usageCount": 4134,
-      "lastUsedAt": 1786139723203,
-      "lastUsedNumStartups": 91
+      "usageCount": 4141,
+      "lastUsedAt": 1786147526746,
+      "lastUsedNumStartups": 93
     },
     "obsidian-second-brain@obsidian-second-brain": {
       "usageCount": 233,
@@ -1795,9 +1795,9 @@
       "lastUsedNumStartups": 5
     },
     "ecc@ecc": {
-      "usageCount": 6999,
-      "lastUsedAt": 1786139723203,
-      "lastUsedNumStartups": 91
+      "usageCount": 7012,
+      "lastUsedAt": 1786147526746,
+      "lastUsedNumStartups": 93
     },
     "productivity@inline": {
       "usageCount": 0,
