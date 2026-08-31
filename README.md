@@ -1,63 +1,149 @@
 # claude-config
 
-Configurações do Claude Code, para restaurar depois de formatar o PC.
+Sincroniza configurações e memória do Claude Code entre computadores.
 
-**Repositório privado.** Contém identificadores da conta (`userID`, `machineID`,
-e-mail em `oauthAccount`) dentro do `.claude.json`. Nenhuma credencial.
+**Repositório privado.** Contém identificadores da conta (`userID`, `machineID`, e-mail em `oauthAccount`) dentro do `.claude.json`. Nenhuma credencial.
 
-## Restaurar num PC novo
+---
 
+## ⚡ Quick Start
+
+### Sincronizar (PC Atual)
+
+**Duplo-clique em `SINCRONIZAR.bat`**
+
+- ✅ Copia configurações atuais
+- ✅ Sincroniza memória dos projetos (`.md` files)
+- ✅ Comita e envia para GitHub
+- ✅ Mostra status ao terminar
+
+### Restaurar (PC Novo)
+
+**1. Instalar Claude Code:**
 ```powershell
-# 1. instalar o Claude Code
 irm https://claude.ai/install.ps1 | iex
+```
 
-# 2. clonar este repo
+**2. Clonar este repositório:**
+```powershell
 gh auth login
 gh repo clone enzozon/claude-config
-
-# 3. o formato leva o ~/.gitconfig junto: sem isso o sincronizar.ps1 nao commita
-#    ("Author identity unknown") nem envia ("could not read Username")
-git config --global user.name  "Enzo Faroni Zon"
-git config --global user.email "enzozon7b@gmail.com"
-gh auth setup-git
+cd claude-config
 ```
 
-**4. Duplo-clique em `RESTAURAR.bat`.**
-
-Use o `.bat`, não o `.ps1` direto: num Windows recém-instalado a
-`ExecutionPolicy` vem `Restricted` e bloqueia o script com
-*"não pode ser carregado porque a execução de scripts foi desabilitada"*.
-O `.bat` contorna isso só naquele processo, sem alterar a segurança da máquina.
-
-**5. Abra o Claude Code:** rode `/login`. Os plugins voltam sozinhos — o script
-corrige os caminhos e o Claude Code rebaixa o cache do marketplace. Confira com
-`claude plugin list`: os 8 devem aparecer como `enabled`. Só use `/plugin` se
-algum ficar como `failed to load` (o script imprime a lista do que era).
-
-## O que tem aqui
-
-| Caminho | O quê |
-|---|---|
-| `config/.claude/rules/` | Suas regras globais (ecc: common, react, typescript, web) |
-| `config/.claude/skills/` | Skills próprias — hoje vazio: não havia `~/.claude/skills`. As skills em uso vêm dos plugins |
-| `config/.claude/settings.json` | Hooks, permissões, statusline |
-| `config/.claude/plugins/*.json` | Lista de plugins e marketplaces para reinstalar |
-| `config/.claude.json` | Config principal |
-
-## O que NÃO tem, e por quê
-
-| Fora | Motivo |
-|---|---|
-| `.credentials.json` | Token OAuth vivo da conta. `/login` recria em 10s |
-| `.claude-mem/*.db` | O banco de memória guardava uma chave de API do Google em texto puro, capturada de uma conversa antiga |
-| `plugins/cache/` | ~200 MB de código de plugin que se rebaixa sozinho do marketplace |
-| `projects/` | Histórico de conversas; dois arquivos passavam de 100 MB, que o GitHub rejeita |
-
-## Atualizar antes de formatar
-
+**3. Configurar Git (necessário uma única vez):**
 ```powershell
-powershell -ExecutionPolicy Bypass -File sincronizar.ps1
+git config --global user.name "Enzo Faroni Zon"
+git config --global user.email "enzozon7b@gmail.com"
 ```
 
-Ele recolhe as configs atuais, **aborta se detectar qualquer credencial no
-stage**, commita e envia.
+**4. Duplo-clique em `RESTAURAR.bat`**
+
+- ✅ Restaura todas as configurações
+- ✅ Carrega a memória dos projetos
+- ✅ Ajusta caminhos automaticamente
+
+**5. Abra Claude Code e faça login:**
+```
+/login                 (cria novo token)
+claude plugin list     (verifica plugins)
+```
+
+---
+
+## 📋 O que está sincronizado
+
+| Item | O quê | Formato |
+|------|-------|---------|
+| **Configurações** | Settings, hooks, permissões | `settings.json` |
+| **Plugins** | Lista de plugins instalados | `installed_plugins.json` |
+| **Regras** | ECC common, react, typescript, web | `.md` files |
+| **Memória** | Contexto dos projetos (cotafrete, etc) | `.md` files |
+
+---
+
+## ❌ O que NÃO está sincronizado
+
+| Excluído | Por quê |
+|----------|---------|
+| `.credentials.json` | Token OAuth — `/login` recria em 10s |
+| Histórico de conversas (`.jsonl`) | Muito grande (100+ MB) |
+| Plugin cache (`plugins/cache/`) | ~200 MB — rebaixa automaticamente do marketplace |
+| Histórico de projeto (`projects/**/*.jsonl`) | Histórico de conversas passadas |
+
+---
+
+## 🔄 Fluxo de Uso
+
+### Scenario 1: Trabalhar no PC Atual → Levar para PC Novo
+
+```
+PC Atual:
+1. Trabalha, edita memória dos projetos
+2. Duplo-clique em SINCRONIZAR.bat
+   ↓
+GitHub (repositório atualizado)
+   ↓
+PC Novo:
+3. Duplo-clique em RESTAURAR.bat
+4. /login no Claude Code
+✅ Pronto com tudo sincronizado!
+```
+
+### Scenario 2: Apenas Atualizar Memória
+
+```
+Edita: ~/.claude/projects/cotafrete/memory/*.md
+Roda: SINCRONIZAR.bat
+✅ Memória atualizada no GitHub
+```
+
+---
+
+## 📝 Detalhes Técnicos
+
+### SINCRONIZAR.bat
+
+Copia e comita:
+- `~/.claude/rules/` → `config/.claude/rules/`
+- `~/.claude/skills/` → `config/.claude/skills/`
+- `~/.claude/projects/*/memory/` → `config/.claude/projects/*/memory/`
+- `~/.claude/settings.json` → `config/.claude/`
+- Plugins JSON
+
+**Segurança:** Aborta se detectar credenciais (`.env`, `.pem`, `.key`, `.db`)
+
+### RESTAURAR.bat
+
+Restaura `config/` → `~/.claude/`
+
+**Inteligente:**
+- Faz backup de config antiga antes de sobrescrever
+- Ajusta caminhos de plugins para o novo usuário
+- Não reexporta credenciais ou histórico grande
+
+---
+
+## 🛠 Troubleshooting
+
+**"Arquivo não encontrado"**
+- Verifique que clonou o repositório inteiro: `gh repo clone enzozon/claude-config`
+
+**"ExecutionPolicy" error**
+- Use `SINCRONIZAR.bat` ou `RESTAURAR.bat` (contornam automaticamente)
+- Não execute `.ps1` direto
+
+**Plugins aparecem "cache-miss"**
+- Normal no primeiro uso — Claude Code rebaixa do marketplace
+- Se persiste: `claude plugin list` e verifique paths
+
+**Git não commita**
+- Configure user.name e user.email como mostrado acima
+
+---
+
+## 📚 Mais informações
+
+- Claude Code: https://claude.ai/
+- Este repositório: https://github.com/enzozon/claude-config
+- Memória do projeto: `config/.claude/projects/*/memory/MEMORY.md`
