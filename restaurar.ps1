@@ -17,7 +17,7 @@ if (Test-Path "$destino\.claude") {
     Move-Item "$destino\.claude" $antiga
 }
 
-Write-Host "Restaurando rules, skills e settings ..." -ForegroundColor Cyan
+Write-Host "Restaurando rules, skills, projects e settings ..." -ForegroundColor Cyan
 robocopy "$origem\.claude" "$destino\.claude" /E /R:1 /W:1 /NFL /NDL /NJH /NJS /NP | Out-Null
 
 Write-Host "Restaurando .claude.json ..." -ForegroundColor Cyan

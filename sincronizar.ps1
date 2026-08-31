@@ -20,6 +20,19 @@ function Copiar-Pasta($origem, $destino) {
 Copiar-Pasta "$src\.claude\rules"  "$repo\config\.claude\rules"
 Copiar-Pasta "$src\.claude\skills" "$repo\config\.claude\skills"
 
+# Sincroniza APENAS a memória dos projetos (*.md files), não o histórico (*.jsonl)
+Write-Host "  Coletando memoria dos projetos ..." -ForegroundColor Gray
+if (Test-Path "$src\.claude\projects") {
+    Get-ChildItem "$src\.claude\projects" -Directory | ForEach-Object {
+        $memory = "$($_.FullName)\memory"
+        if (Test-Path $memory) {
+            $destino = "$repo\config\.claude\projects\$($_.Name)\memory"
+            robocopy $memory $destino /MIR /R:1 /W:1 /NFL /NDL /NJH /NJS /NP | Out-Null
+            if ($LASTEXITCODE -ge 8) { throw "robocopy falhou ($LASTEXITCODE) em $memory" }
+        }
+    }
+}
+
 Copy-Item "$src\.claude\settings.json"                   "$repo\config\.claude\"         -Force
 Copy-Item "$src\.claude\plugins\installed_plugins.json"  "$repo\config\.claude\plugins\" -Force
 Copy-Item "$src\.claude\plugins\known_marketplaces.json" "$repo\config\.claude\plugins\" -Force

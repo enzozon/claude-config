@@ -12,6 +12,13 @@
 *.db-shm
 .claude-mem/
 
+# Historico de conversas do Claude por projeto: muito grande (100+ MB)
+# Sincroniza APENAS a memoria (*.md files), nao os .jsonl e .meta.json
+config/.claude/projects/**/*.jsonl
+config/.claude/projects/**/*.meta.json
+config/.claude/projects/**/tool-results/
+config/.claude/projects/**/subagents/
+
 # Ruido
 *.log
 node_modules/
