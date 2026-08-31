@@ -5,16 +5,17 @@
     "sessionUrl": false
   },
   "includeCoAuthoredBy": false,
-  "model": "opus",
+  "model": "haiku",
   "enabledPlugins": {
     "ponytail@ponytail": true,
     "claude-mem@thedotmack": true,
     "obsidian-second-brain@obsidian-second-brain": true,
     "commit-pt@skills-claude": true,
-    "skill-bench@skills-claude": true,
+    "skill-bench@skills-claude": false,
     "ecc@ecc": true,
-    "usage-for@skills-claude": true,
-    "curriculo-vaga@skills-claude": true
+    "usage-for@skills-claude": false,
+    "curriculo-vaga@skills-claude": false,
+    "superpowers@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -48,7 +49,40 @@
       }
     }
   },
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-haiku-4-5": {
+      "effortLevel": "low"
+    }
+  },
   "autoUpdatesChannel": "latest",
-  "theme": "dark"
+  "theme": "dark",
+  "autoMode": {
+    "environment": [
+      "### Org-wide",
+      "**Organization**: None configured",
+      "**Cloud provider(s)**: None configured",
+      "**Repository visibility**: private (enzozon/cotafrete, via gh)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: None configured",
+      "**Default / protected branches**: main; no protected branches listed via gh (rulesets not queryable here — protection may still exist)",
+      "**CI/CD deploy targets**: None configured",
+      "**Network posture**: None configured",
+      "**Source control**: github.com/enzozon/cotafrete (this repo and its remote) only",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: .env and *.key files (per .gitignore); any file or store holding personal data, confidential business data, credentials, regulated data, or similarly sensitive material; preserve exact handles when known and share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development",
+      "**Trusted repo**: C:\\Users\\vendas12\\enzo\\cotafrete (github.com/enzozon/cotafrete, private) — confidential material is fine here; content ported or first read from outside this repo is not this repo's own work",
+      "**Org-specific CLIs**: None configured",
+      "routine under C:\\Users\\vendas12\\enzo\\cotafrete\\ prefix"
+    ]
+  }
 }
