@@ -21,7 +21,11 @@ certos. Todos medidos em produção em 13/08/2026 e travados por teste.
 - Telefone (os dois): máscara brasileira de 10-11 dígitos. `+55 (27) ...`
   esvazia o campo na Della Volpe. Corte o 55 inicial.
 
-**Della Volpe só aceita envio com janela VISÍVEL.** O reCAPTCHA v3 pontua
+**Della Volpe: o reCAPTCHA virou Turnstile em 31/08/2026** e o envio
+automático deixou de existir — ver [[dellavolpe-turnstile-e-o-favorito]].
+O parágrafo abaixo vale para o histórico, não para hoje.
+
+**Della Volpe só aceitava envio com janela VISÍVEL.** O reCAPTCHA v3 pontua
 Chromium headless como robô e o Contact Form 7 responde "A submissão
 mencionou-se como spam" — nenhum e-mail é gerado. Com `headless=False` passa.
 

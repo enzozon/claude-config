@@ -1,0 +1,4 @@
+- [Casas Bahia — resolvido a ligar a um Chrome aberto à mão](casasbahia-akamai-bloqueio.md) — o Akamai reprova o Chrome do chromedriver (não é IP); porta 9222 + debugger_address passa; lançamento antigo fica de reserva.
+- [Servidor só tem Chrome 109](servidor-datasheet-chrome-109.md) — sites React (Ingram) não montam a página lá; resolvido a chamar a API JSON de dentro do browser. Intelbras ainda em `version_main=144`.
+- [B&H: desafio do Cloudflare sem widget](bh-cloudflare-sem-widget.md) — o widget está num closed shadow root; acha-se pelo input `cf-turnstile-response` e clica-se por CDP.
+- [Regras para mexer nos scrapers](regras-scrapers-datasheet.md) — não mudar arquitetura, mesmas bibliotecas, mesma formatação, só corrigir bugs; alvo é Windows Server 2012 R2 com Chrome 109.

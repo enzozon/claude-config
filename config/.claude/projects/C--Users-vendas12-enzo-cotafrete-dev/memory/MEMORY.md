@@ -1,0 +1,3 @@
+- [Braspress: transportadora implementada](braspress_proxima_transportadora.md) — feita em 02/09/2026, PR #14 aberto, produção ainda não atualizada
+- [Padrão de implementação de transportadora](padrao_implementacao_transportadora.md) — roteiro recon → mapping → adapter → fixture → dry-run → envio real → wiring → deploy
+- [Sessão 03/09: caça a bugs em produção](sessao_03-09-caca_bugs.md) — 7 bugs reais corrigidos (Generoso, Translovato, Jadlog) + causa raiz de interrompidos fantasma; metodologia para continuar

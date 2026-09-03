@@ -7,3 +7,4 @@
 - [CIF ou FOB](cotafrete-cif-fob.md) — quem paga é derivado da escolha; o que cada site recebe em cada modo, e o bug que isso corrigiu na Camilo.
 - [Mensagens de erro por transportadora](mensagens-de-erro-por-transportadora.md) — traduzir erro tecnico em aviso que o vendedor entende; Enzo avisa quando fazer.
 - [Envio de WhatsApp em lote](envio-whatsapp-em-lote.md) — decidido: envio guiado com contador "3 de 14 abertas"; lista de transmissão não entrega e a API oficial precisa de caixa de entrada.
+- [Della Volpe: Turnstile e o favorito](dellavolpe-turnstile-e-o-favorito.md) — ela saiu das automáticas em 31/08; o combinado para 01/09 é o bookmarklet.

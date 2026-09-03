@@ -5,7 +5,7 @@
     "sessionUrl": false
   },
   "includeCoAuthoredBy": false,
-  "model": "haiku",
+  "model": "claude-fable-5-1[1m]",
   "enabledPlugins": {
     "ponytail@ponytail": true,
     "claude-mem@thedotmack": true,
@@ -53,6 +53,12 @@
   "modelSettings": {
     "claude-haiku-4-5": {
       "effortLevel": "low"
+    },
+    "claude-sonnet-5": {
+      "effortLevel": "high"
+    },
+    "claude-fable-5-1": {
+      "effortLevel": "medium"
     }
   },
   "autoUpdatesChannel": "latest",

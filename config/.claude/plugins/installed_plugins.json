@@ -14,11 +14,11 @@
     "claude-mem@thedotmack": [
       {
         "scope": "user",
-        "installPath": "C:\\Users\\vendas12\\.claude\\plugins\\cache\\thedotmack\\claude-mem\\13.13.1",
-        "version": "13.13.1",
+        "installPath": "C:\\Users\\vendas12\\.claude\\plugins\\cache\\thedotmack\\claude-mem\\13.23.0",
+        "version": "13.23.0",
         "installedAt": "2026-07-13T21:06:48.613Z",
-        "lastUpdated": "2026-08-07T23:59:24.290Z",
-        "gitCommitSha": "f85bb28c4788ed6372e3406b3fc92cfbecf6df08"
+        "lastUpdated": "2026-09-01T20:35:44.199Z",
+        "gitCommitSha": "be93a7733ac80192b66083bd55927f175ee78d61"
       }
     ],
     "obsidian-second-brain@obsidian-second-brain": [
